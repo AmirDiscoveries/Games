@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎮 Workflow Builder Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎮 Workflow Builder Puzzle</h1>
+      <p>Drag and drop nodes to complete the workflow!</p>
+    </div>
+
+    <div class="level-selector">
+      <div class="level-dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown()">
+          <span id="current-level">Level 1: Basic Data Flow</span>
+          <span class="dropdown-arrow" id="dropdown-arrow">▼</span>
+        </button>
+        <div class="dropdown-content" id="dropdown-content">
+          <div class="dropdown-item" onclick="selectLevel(1)">
+            <h4>Level 1: Basic Data Flow</h4>
+            <p>Create a simple workflow that sets a variable, processes it, and outputs the result.</p>
+          </div>
+          <div class="dropdown-item" onclick="selectLevel(2)">
+            <h4>Level 2: Conditional Logic</h4>
+            <p>Build a workflow with conditional branching using if/else logic.</p>
+          </div>
+          <div class="dropdown-item" onclick="selectLevel(3)">
+            <h4>Level 3: API Integration</h4>
+            <p>Create a complex workflow with multiple API calls for weather and air quality data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-area">
+      <div class="available-nodes">
+        <h3>Available Nodes</h3>
+        <div id="node-palette"></div>
+      </div>
+
+      <div class="workflow-canvas">
+        <div class="level-progress">
+          <h3 id="level-title">Level 1: Basic Data Flow</h3>
+          <div class="progress-indicator">1/3</div>
+        </div>
+        
+        <div class="level-description">
+          <div id="level-1-desc" class="level-desc active">
+            <h4>Mission Briefing: Basic Data Flow</h4>
+            <p>Welcome to Workflow 101! Your task is to create a simple data pipeline. 
+            Start by setting an initial value, then process it through a transformation function, 
+            and finally deliver the processed result. Think of it like baking a cake: 
+            gather ingredients (input), mix them (process), then serve (output).</p>
+          </div>
+          
+          <div id="level-2-desc" class="level-desc">
+            <h4>Mission Briefing: Conditional Logic</h4>
+            <p>Time to add some decision-making! You'll build a workflow that reacts differently 
+            based on conditions. Imagine a form submission system that needs to take different 
+            actions depending on the input. The key is proper branching - your workflow should 
+            handle both possible paths (like a fork in the road).</p>
+          </div>
+          
+          <div id="level-3-desc" class="level-desc">
+            <h4>Mission Briefing: API Integration</h4>
+            <p>Final challenge: Create an intelligent assistant! Your workflow should begin with 
+            user input, analyze it with AI, then fetch relevant data from external services before 
+            taking action. Picture a travel assistant that checks weather and air quality when 
+            you mention a destination, then emails you the details.</p>
+          </div>
+        </div>
+        
+        <div id="workflow-area"></div>
+        <div class="controls">
+          <button class="btn btn-primary" onclick="testWorkflow()">▶️ Test Workflow</button>
+          <button class="btn btn-secondary" onclick="resetWorkflow()">🔄 Reset</button>
+        </div>
+        <div id="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
